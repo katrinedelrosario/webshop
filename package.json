@@ -1,0 +1,24 @@
+{
+  "name": "webshop",
+  "version": "1.0.0",
+  "description": "webshop assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katrinedelrosario/webshop.git"
+  },
+  "author": "Katrine del Rosario",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/katrinedelrosario/webshop/issues"
+  },
+  "homepage": "https://github.com/katrinedelrosario/webshop#readme",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
+  }
+}
