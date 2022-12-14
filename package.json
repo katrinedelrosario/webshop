@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "webshop assignment",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,9 +17,12 @@
     "url": "https://github.com/katrinedelrosario/webshop/issues"
   },
   "homepage": "https://github.com/katrinedelrosario/webshop#readme",
-  "type": "module",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "dotenv": "^16.0.3",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.27.0"
   }
 }
