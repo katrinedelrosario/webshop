@@ -21,8 +21,8 @@ class SizeController {
     
     create = async (req, res) => {
         console.log(req.body)
-        const {size_eu, size_us} = req.body
-        if(size_eu && size_us) {
+        const {size_eu, size_us, size_uk} = req.body
+        if(size_eu && size_us && size_uk) {
             const model = await SizeModel.create(req.body)
             return res.json({newid: model.id})
         } else {
@@ -32,8 +32,8 @@ class SizeController {
     
     update = async (req, res) => {
         console.log(req.body)
-        const{size_eu, size_us} = req.body
-        if (size_eu && size_us) {
+        const{size_eu, size_us, size_uk} = req.body
+        if (size_eu && size_us && size_uk) {
             const model = await SizeModel.update(req.body, {
                 where: {
                     id: req.params.id

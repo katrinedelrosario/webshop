@@ -17,6 +17,10 @@ SizeModel.init({
     size_us: {
         type: DataTypes.FLOAT,
         allowNull: false
+    },
+    size_uk: {
+        type: DataTypes.FLOAT,
+        allowNull: false
     }
 }, {
     sequelize,

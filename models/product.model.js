@@ -39,7 +39,8 @@ ProductModel.init({
     modelName: 'product',
     freezeTableName: true,
     createdAt: false,
-    updatedAt: false
+    updatedAt: false,
+    underscored: true
 })
 
 export default ProductModel

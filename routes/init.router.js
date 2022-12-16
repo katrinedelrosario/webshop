@@ -6,7 +6,9 @@ const router = express.Router()
 
 router.get('/init', (req, res) => {
     try {
-        sequelize.sync()
+        sequelize.sync({
+            alter: true
+        })
         res.sendStatus(200)
     }
     catch(err) {

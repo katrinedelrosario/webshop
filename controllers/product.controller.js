@@ -1,4 +1,7 @@
 import ProductModel from '../models/product.model.js'
+import BrandModel from '../models/brand.model.js'
+
+BrandModel.hasMany(ProductModel)
 
 class ProductController {
     constructor () {
