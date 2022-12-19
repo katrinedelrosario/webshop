@@ -1,4 +1,8 @@
 import CategoryModel from '../models/category.model.js'
+import ProductModel from '../models/product.model.js'
+
+CategoryModel.hasMany(ProductModel)
+ProductModel.belongsTo(CategoryModel)
 
 class CategoryController {
     constructor () {

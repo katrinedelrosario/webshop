@@ -18,6 +18,7 @@ ColorModel.init({
     sequelize,
     modelName: 'color',
     freezeTableName: true,
+    underscored: true,
     createdAt: false,
     updatedAt: false
 })

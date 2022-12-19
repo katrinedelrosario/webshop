@@ -26,6 +26,7 @@ SizeModel.init({
     sequelize,
     modelName: 'size',
     freezeTableName: true,
+    underscored: true,
     createdAt: false,
     updatedAt: false
 })

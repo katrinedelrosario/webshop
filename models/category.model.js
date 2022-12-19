@@ -18,6 +18,7 @@ CategoryModel.init({
     sequelize,
     modelName: 'category',
     freezeTableName: true,
+    underscored: true,
     createdAt: false,
     updatedAt: false
 })

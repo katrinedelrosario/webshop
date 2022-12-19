@@ -5,9 +5,11 @@ class BrandModel extends Model {}
 
 
 BrandModel.init({
-    brand_id: {
+    id: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        autoIncrement: true,
+        primaryKey: true
         
     },
     name: {
@@ -18,6 +20,7 @@ BrandModel.init({
     sequelize,
     modelName: 'brand',
     freezeTableName: true,
+    underscored: true,
     createdAt: false,
     updatedAt: false
 })
