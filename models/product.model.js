@@ -1,5 +1,6 @@
 import {sequelize} from '../config/db.js'
 import {DataTypes, Model} from 'sequelize'
+import BrandModel from './brand.model.js'
 
 class ProductModel extends Model {}
 
@@ -15,7 +16,7 @@ ProductModel.init({
         allowNull: false
     },
     brand_id: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false
     },
     price: {
@@ -40,7 +41,6 @@ ProductModel.init({
     freezeTableName: true,
     createdAt: false,
     updatedAt: false,
-    underscored: true
 })
 
 export default ProductModel

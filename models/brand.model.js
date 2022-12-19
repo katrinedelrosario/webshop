@@ -3,12 +3,12 @@ import {DataTypes, Model} from 'sequelize'
 
 class BrandModel extends Model {}
 
+
 BrandModel.init({
-    id: {
+    brand_id: {
         type: DataTypes.INTEGER,
-        autoIncrement: true,
         allowNull: false,
-        primaryKey: true
+        
     },
     name: {
         type: DataTypes.STRING,
