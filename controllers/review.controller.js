@@ -21,8 +21,8 @@ class ReviewController {
     
     create = async (req, res) => {
         console.log(req.body)
-        const {firstname, lastname, email, password} = req.body
-        if(firstname && lastname && email && password) {
+        const {user_id, product_id, headline, body} = req.body
+        if(user_id && product_id && headline && body) {
             const model = await ReviewModel.create(req.body)
             return res.json({newid: model.id})
         } else {
@@ -31,13 +31,12 @@ class ReviewController {
     }
     
     update = async (req, res) => {
-        const {firstname, lastname, email, password} = req.body
-        if(firstname && lastname && email && password) {
+        const {user_id, product_id, headline, body} = req.body
+        if(user_id && product_id && headline && body) {
             const model = await ReviewModel.update(req.body, {
                 where: {
                     id: req.params.id
-                },
-                individualHooks: true
+                }
             })
             return res.json({status: true})
         } else {

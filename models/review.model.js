@@ -40,7 +40,7 @@ ReviewModel.init({
     modelName: 'review',
     freezeTableName: true,
     createdAt: true,
-    updatedAt: false
+    updatedAt: true
 })
 
 export default ReviewModel

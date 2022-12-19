@@ -3,12 +3,15 @@ import dotenv from 'dotenv'
 
 import {router as InitRouter} from './routes/init.router.js'
 import {router as UserRouter} from './routes/user.router.js'
+import {router as AuthenticateRouter} from './routes/authenticate.router.js'
 import {router as ProductRouter} from './routes/product.router.js'
 import {router as BrandRouter} from './routes/brand.router.js'
 import {router as CategoryRouter} from './routes/category.router.js'
 import {router as ColorRouter} from './routes/color.router.js'
 import {router as SizeRouter} from './routes/size.router.js'
 import {router as About_ProductRouter} from './routes/about_product.router.js'
+import {router as ReviewRouter} from './routes/review.router.js'
+
 
 
 
@@ -20,12 +23,14 @@ app.use(express.urlencoded({ extended: true }))
 
 app.use(InitRouter)
 app.use(UserRouter)
+app.use(AuthenticateRouter)
 app.use(ProductRouter)
 app.use(BrandRouter)
 app.use(CategoryRouter)
 app.use(ColorRouter)
 app.use(SizeRouter)
 app.use(About_ProductRouter)
+app.use(ReviewRouter)
 
 
 app.use(express.json())
