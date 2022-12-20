@@ -14,6 +14,10 @@ ProductModel.init({
         type: DataTypes.STRING,
         allowNull: false
     },
+    nickname: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
     brand_id: {
         type: DataTypes.INTEGER,
         allowNull: false
@@ -28,6 +32,14 @@ ProductModel.init({
     },
     color_id: {
         type: DataTypes.INTEGER,
+        allowNull: false
+    },
+    release_date: {
+        type: DataTypes.DATEONLY,
+        allowNull: true
+    },
+    description: {
+        type: DataTypes.TEXT,
         allowNull: false
     }
 }, {
