@@ -26,11 +26,6 @@ UserModel.init({
     password: {
         type: DataTypes.STRING,
         allowNull: false
-    },
-    is_active: {
-        type: DataTypes.BOOLEAN,
-        allowNull: false,
-        defaultValue: false
     }
 }, {
     sequelize,

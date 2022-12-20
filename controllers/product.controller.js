@@ -4,11 +4,25 @@ import ColorModel from '../models/color.model.js'
 import SizeModel from '../models/size.model.js'
 
 
-ProductModel.hasOne(BrandModel)
+BrandModel.hasOne(ProductModel, {
+    foreignKey: 'brand_id'
+}) 
 
-ProductModel.hasMany(ColorModel)
+ColorModel.hasMany(ProductModel, {
+    foreignKey: 'color_id'
+})
 
-ProductModel.hasMany(SizeModel)
+SizeModel.hasMany(ProductModel, {
+    foreignKey: 'size_id'
+})
+
+// // ProductModel.hasMany(ColorModel, {
+// //     foreignKeyConstraint: 'color_id'
+// // })
+
+// // ProductModel.hasMany(SizeModel, {
+// //     foreignKey: 'size_id'
+// // })
 
 class ProductController {
     constructor () {
