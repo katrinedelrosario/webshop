@@ -41,6 +41,10 @@ ProductModel.init({
     description: {
         type: DataTypes.TEXT,
         allowNull: false
+    },
+    img: {
+        type: DataTypes.BLOB,
+        allowNull: false
     }
 }, {
     sequelize,
