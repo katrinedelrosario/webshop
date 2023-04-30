@@ -84,7 +84,7 @@ class ProductController {
             })
             return res.json({status: true})
         } else {
-            res.send(418)
+            res.sendStatus(418)
         }
     }
 
