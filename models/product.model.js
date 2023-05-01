@@ -42,8 +42,8 @@ ProductModel.init({
         type: DataTypes.TEXT,
         allowNull: false
     },
-    img: {
-        type: DataTypes.BLOB,
+    img_id: {
+        type: DataTypes.INTEGER,
         allowNull: false
     }
 }, {

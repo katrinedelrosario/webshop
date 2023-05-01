@@ -2,6 +2,7 @@ import ProductModel from '../models/product.model.js'
 import BrandModel from '../models/brand.model.js'
 import ColorModel from '../models/color.model.js'
 import SizeModel from '../models/size.model.js'
+import ImgModel from '../models/img.model.js'
 
 
 BrandModel.hasOne(ProductModel, {
@@ -14,6 +15,10 @@ ColorModel.hasMany(ProductModel, {
 
 SizeModel.hasMany(ProductModel, {
     foreignKey: 'size_id'
+})
+
+ ImgModel.hasMany(ProductModel, {
+     foreignKey: 'img_id'
 })
 
 // // ProductModel.hasMany(ColorModel, {
@@ -31,7 +36,7 @@ class ProductController {
 
     list = async (req, res) => {
         const result = await ProductModel.findAll({
-            attributes: ['id', 'model', 'price'],
+            attributes: ['id', 'model', 'price', 'brand', 'img_id'],
             //order: ['id'],
             include: {
                 model: BrandModel,
@@ -39,7 +44,9 @@ class ProductController {
                 model: ColorModel,
                 attributes: ['id'],
                 model: SizeModel,
-                attributes: ['size_eu']
+                attributes: ['size_eu'],
+                model: ImgModel,
+                attributes: ['id']
             }
         })
         res.json(result)
@@ -56,7 +63,9 @@ class ProductController {
                 model: ColorModel,
                 attributes: ['id', 'name'],
                 model: SizeModel,
-                attributes: ['id', 'size_eu', 'size_us', 'size_uk']
+                attributes: ['id', 'size_eu', 'size_us', 'size_uk'],
+                model: ImgModel,
+                attributes: ['id', 'url']
             }
         })
         res.json(result)
@@ -64,8 +73,8 @@ class ProductController {
     
      create = async (req, res) => {
          console.log(req.body)
-         const {model, brand_id, price, size_id, color_id} = req.body
-         if(model && brand_id && price && size_id && color_id) {
+         const {model, brand_id, price, size_id, color_id, img_id} = req.body
+         if(model && brand_id && price && size_id && color_id && img_id) {
              const model = await ProductModel.create(req.body)
              return res.json({newid: model.id})
          } else {
@@ -75,8 +84,9 @@ class ProductController {
     
     update = async (req, res) => {
         console.log(req.body)
-        const{name} = req.body
-        if (name) {
+        const{id} = req.params || 0
+        const {model, brand_id, price, size_id, color_id, img_id} = req.body
+        if (id && model && brand_id && price && size_id && color_id && img_id) {
             const model = await ProductModel.update(req.body, {
                 where: {
                     id: req.params.id

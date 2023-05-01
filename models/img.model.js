@@ -11,7 +11,7 @@ ImgModel.init({
         primaryKey: true
     },
     url: {
-        type: DataTypes.STRING,
+        type: DataTypes.BLOB,
         allowNull: false
     }
 }, {

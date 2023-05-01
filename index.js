@@ -9,6 +9,7 @@ import {router as BrandRouter} from './routes/brand.router.js'
 import {router as CategoryRouter} from './routes/category.router.js'
 import {router as ColorRouter} from './routes/color.router.js'
 import {router as SizeRouter} from './routes/size.router.js'
+import {router as ImgRouter} from './routes/img.router.js'
 import {router as ReviewRouter} from './routes/review.router.js'
 
 
@@ -28,6 +29,7 @@ app.use(BrandRouter)
 app.use(CategoryRouter)
 app.use(ColorRouter)
 app.use(SizeRouter)
+app.use(ImgRouter)
 app.use(ReviewRouter)
 
 
